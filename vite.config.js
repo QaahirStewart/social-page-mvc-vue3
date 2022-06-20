@@ -3,6 +3,7 @@ import { fileURLToPath, URL } from "url";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import Unocss from "unocss/vite";
+import { presetScrollbar } from "unocss-preset-scrollbar";
 import {
   presetUno,
   presetIcons,
@@ -120,6 +121,7 @@ export default defineConfig({
         presetIcons(),
         presetAttributify(),
         presetWebFonts(),
+        presetScrollbar(),
       ],
     }),
   ],

@@ -1,20 +1,37 @@
 <script setup>
 import useSupabase from "../../../composables/useSupabase";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
+import { useRoute } from "vue-router";
 
 const { supabase } = useSupabase();
 const router = useRouter();
+const route = useRoute();
+const currentId = route.params.linkId;
 
 const name = ref("");
 const email = ref("");
 const phone = ref("");
 const country = ref("");
 const city = ref("");
+onMounted(() => {
+  getUserDetails();
+});
+
+const getUserDetails = async () => {
+  let { data } = await supabase.from("user_details").select("*");
+
+  name.value = data[0].name;
+  email.value = data[0].email;
+  phone.value = data[0].phone;
+  country.value = data[0].country;
+  city.value = data[0].city;
+  console.log(data);
+};
 
 const addUserDetails = async () => {
   try {
-    const { data, error } = await supabase.from("user_details").insert([
+    const { data, error } = await supabase.from("user_details").update([
       {
         name: name.value,
         email: email.value,

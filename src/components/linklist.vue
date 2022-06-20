@@ -6,11 +6,12 @@ import { ref } from "vue";
 const { supabase } = useSupabase();
 
 const links = ref("");
+const bgc = ref('red')
+
 
 onMounted(() => {
   getLinks();
 });
-
 
 const getLinks = async () => {
   let { data } = await supabase.from("links").select("*");
@@ -34,17 +35,24 @@ const getLinks = async () => {
             rounded-lg
             focus:outline-concrete-600 focus:outline-1 focus:ring-0
             autofill:bg-pink-300
-            pl-20
             flex
             items-center
             font-bold
+            space-x-5
+            pl-20
           "
         >
-          {{ link.title }}
+          <p>{{ link.title }}</p>
         </div></router-link
       >
     </div>
+    
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.linklist {
+  background-color: v-bind(bgc);
+}
+
+</style>

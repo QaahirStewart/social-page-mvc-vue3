@@ -8,13 +8,14 @@
   },
   "dependencies": {
     "@headlessui/vue": "^1.4.3",
-    "@iconify/json": "^1.1.460",
+    "@iconify/json": "^2.1.32",
     "@supabase/supabase-js": "^1.29.4",
     "@unocss/preset-attributify": "^0.22.6",
     "@unocss/preset-icons": "^0.22.6",
     "@unocss/preset-uno": "^0.22.6",
     "@unocss/preset-web-fonts": "^0.22.6",
     "tailwind-scrollbar-hide": "^1.1.7",
+    "unocss-preset-scrollbar": "^0.2.1",
     "vue": "^3.2.27",
     "vue-router": "^4.0.12"
   },

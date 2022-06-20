@@ -10,7 +10,7 @@ const circle = ref("9999px");
 const corner = ref("");
 const buttonColor = ref("");
 const borderColor = ref("");
-const borderWidth= ref("");
+const borderWidth = ref("");
 // const unitVaule = ref("px");
 // const borderWidth = computed(() => borderWidthInput.value + unitVaule.value);
 
@@ -56,8 +56,22 @@ const saveProperties = async () => {
 
 <template>
   <!-- Button Shape -->
-  <div class="space-y-4.5 overflow-auto overscroll-auto h-auto max-h-60">
-    <div class="space-y-1">
+  <div
+    class="
+      space-y-4.5
+      overflow-auto
+      overscroll-auto
+      h-auto
+      pr-4
+      max-h-60
+      scrollbar
+      scrollbar-rounded
+      scrollbar-track-color-white
+      scrollbar-thumb-color-black
+      scrollbar-w-6px
+    "
+  >
+    <!-- <div class="space-y-1">
       <label>Shape</label
       ><select
         class="bg-[#F2F2F2] w-full h-[40px] px-6 rounded-lg focus:outline-none"
@@ -65,7 +79,7 @@ const saveProperties = async () => {
         <option value="Medium">Rectangle</option>
         <option value="Large">Square</option>
       </select>
-    </div>
+    </div> -->
 
     <!-- Button Corner -->
     <form class="space-y-1" @change="saveProperties">
@@ -124,7 +138,7 @@ const saveProperties = async () => {
     </form>
 
     <!-- Button Shadow -->
-    <div class="space-y-5 flex flex-col">
+    <!-- <div class="space-y-5 flex flex-col">
       <div class="space-y-5">
         <label>Shadow</label>
         <input
@@ -166,7 +180,7 @@ const saveProperties = async () => {
           "
         />
       </div>
-    </div>
+    </div> -->
 
     <!-- Button Border -->
     <form class="space-y-5 flex flex-col" @change="saveProperties">
@@ -219,7 +233,7 @@ const saveProperties = async () => {
       </div>
     </form>
 
-    <div class="space-y-5 flex flex-col">
+    <!-- <div class="space-y-5 flex flex-col">
       <div class="space-y-5">
         <label>Fill</label>
         <input
@@ -229,7 +243,7 @@ const saveProperties = async () => {
           class="w-full bg-black appearance-none rounded-full h-1.5"
         />
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
